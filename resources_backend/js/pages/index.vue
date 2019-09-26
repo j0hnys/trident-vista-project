@@ -30,14 +30,13 @@
         <Row type="flex" justify="center" align="middle">
             <Col span="24">
                 <h1>
-                    test
+                    Hi!
                 </h1>
 
                 <router-link :to="{name:'/'}">Home</router-link>
 
                 <h2>
-                    <p>Welcome to your iView app!</p>
-                    <Button @click="handleStart">Start iView</Button>
+                    <p>Welcome to your Trident-Vista app!</p>
                 </h2>
             </Col>
         </Row>

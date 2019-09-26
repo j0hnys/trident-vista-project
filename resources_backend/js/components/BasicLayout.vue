@@ -89,12 +89,10 @@
                                 </Poptip>
                             </Col>
                             <Col span="12">
-                                <Dropdown>
+                                <Dropdown @on-click="onLogoutButtonClicked">
                                     <Avatar icon="ios-person" size="large" />
                                     <DropdownMenu slot="list">
-                                        <DropdownItem>Account</DropdownItem>
-                                        <DropdownItem>Settings</DropdownItem>
-                                        <DropdownItem>Logout</DropdownItem>
+                                        <DropdownItem name="logout">Logout</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
                             </Col>
@@ -185,10 +183,6 @@
         },
         methods: {
             on_main_menu_item_clicked(menu_name) {
-                console.log('on_main_menu_item_clicked');
-                console.log({
-                    menu_name: menu_name,
-                });
 
                 var indexes = menu_name.split('-');
 
@@ -211,13 +205,8 @@
 
             },
             on_sub_menu_item_clicked(menu_name) {
-                console.log('on_sub_menu_item_clicked');
-                console.log({
-                    menu_name: menu_name,
-                });
 
                 var indexes = menu_name.split('-');
-                // indexes.shift();    //<-- to remove "sub"
                 var sub_menu = this.submenu;
                 var current_menu_level = sub_menu;
 
@@ -236,13 +225,14 @@
                 this.$store.commit('components/BasicLayout/set_breadcrumbs',this.main_menu_breadcrumb.concat(this.sub_menu_breadcrumb));
 
             },
+            onLogoutButtonClicked(name) {
+                if (name == 'logout') {
+                    this.$router.push(process.env.MIX_BASE_RELATIVE_URL_BACKEND+'/logout');
+                    window.location.reload();
+                }
+            },
         },
         mounted() {
-            // console.log('basic layout mounted');
-            // console.log({
-            //     'this': this,
-            //     'this.$store.state.BasicLayout.menu_items': this.$store.state.BasicLayout.menu_items,
-            // });
 
             var navigation = this.$store.getters['components/BasicLayout/navigation']();
 
@@ -262,13 +252,9 @@
 
             this.$store.commit('components/BasicLayout/set_breadcrumbs',[
                 {
-                    text: current_menu.text    //<-- einai k t arxiko active...
+                    text: current_menu.text
                 }
             ]);
-
-            console.log({
-                current_menu: current_menu.name,
-            });
 
         },
     }
