@@ -10,7 +10,9 @@ Vue.use(Vuex);
 window.Vuex = require('vuex');
 
 const store = new Vuex.Store({
-    plugins: [createPersistedState()],
+    plugins: [createPersistedState({
+        key: 'trident-vista-project'
+    })],
     state: {
         base_url: process.env.MIX_BASE_URL+'/',
         base_relative_url: process.env.MIX_BASE_RELATIVE_URL+'/',
