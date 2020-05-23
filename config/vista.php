@@ -10,6 +10,7 @@ return [
 
     'spas' => [
         [
+            'browser_local_storage_key' => 'trident_vista_application',
             'resource_folder_name' => 'resources_backend',
             'public_folder_name' => 'public_backend',
             'mix_base_url_env_name' => 'MIX_BASE_URL_BACKEND',

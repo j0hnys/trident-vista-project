@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
-import Index from './store/pages/Index.js';
-import BasicLayout from './store/components/BasicLayout.js';
+import Index from '../presentation/stores/pages/Index.js';
+import BasicLayout from '../presentation/stores/components/BasicLayout.js';
 var stores = require("./store.pages.js");
 
 Vue.use(Vuex);
@@ -11,7 +11,7 @@ window.Vuex = require('vuex');
 
 const store = new Vuex.Store({
     plugins: [createPersistedState({
-        key: 'trident-vista-project'
+        key: 'vista_new_architecture'
     })],
     state: {
         base_url: process.env.MIX_BASE_URL+'/',

@@ -3,18 +3,13 @@
 </style>
 <template>
     <div>
-        <app-layout>
+        <BasicLayout>
             <router-view></router-view>
-        </app-layout>
+        </BasicLayout>
     </div>
 </template>
 <script>
-    import app_layout from './components/BasicLayout.vue';
-
     export default {
-        components: {
-            'app-layout': app_layout,
-        },
         data () {
             return {}
         },
@@ -22,10 +17,10 @@
             console.log('app mounted');
         },
         beforeDestroy () {
-
+            //
         },
         methods: {
-
+            //
         }
     }
 </script>

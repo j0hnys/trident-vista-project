@@ -29,7 +29,7 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5",
         "j0hnys/trident": "^0.3",
-        "j0hnys/vista": "^0.1"
+        "j0hnys/vista": "^0.2"
     },
     "config": {
         "optimize-autoloader": true,
