@@ -9,11 +9,11 @@ require('./bootstrap');
 
 import ViewUI from 'view-design';
 import VueRouter from 'vue-router';
-import store from './store';
+import store from '../application/store';
 import App from './app.vue';
-import Routers from './router.js';
-import TypedComponentData from './types/TypedComponentData.js';
-// import 'view-design/dist/styles/iview.css';
+import Routers from '../application/router.js';
+import Autoload from './plugins/Autoload';
+import TypedComponentData from './type_checker/TypedComponentData.js';
 
 window.Vue = require('vue');
 window.ViewUI = require('view-design');
@@ -21,17 +21,15 @@ window.ViewUI = require('view-design');
 Vue.use(VueRouter);
 Vue.use(ViewUI);
 Vue.use(TypedComponentData);
+Vue.use(Autoload);
 
 //
-//tmp
 var util = {};
 util.title = function (title) {
     title = title ? title + ' - Home' : 'ViewUI project';
     window.document.title = title;
 };
 //
-//
-
 
 //
 //router
@@ -43,7 +41,7 @@ const RouterConfig = {
 };
 const router = new VueRouter(RouterConfig);
 
-//set intial states
+//set initial states
 router.beforeEach((to, from, next) => {
     ViewUI.LoadingBar.start();
     util.title(to.meta.title);
@@ -55,11 +53,9 @@ router.afterEach((to, from, next) => {
     window.scrollTo(0, 0);
 });
 
-
 //vvv global event bus
-Vue.prototype.$global_events = new Vue();
+Vue.prototype.$globalEvents = new Vue();
 //^^^
-
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -16,5 +16,5 @@ mix.setPublicPath(('../trident-vista-project/'));
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
 
-mix.js('resources_backend/js/app.js', 'public_backend/js')
-   .sass('resources_backend/sass/app.scss', 'public_backend/css');
+mix.js('resources_backend/client_app/infrastructure/app.js', 'public_backend/js')
+   .sass('resources_backend/client_app/presentation/styles/app.scss', 'public_backend/css');

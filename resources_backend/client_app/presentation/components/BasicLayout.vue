@@ -137,6 +137,8 @@
 </template>
 <script>
     export default {
+        namespace: 'components/BasicLayout',
+        name: 'BasicLayout',
         data () {
             var state = {
                 breadcrumbs: [],

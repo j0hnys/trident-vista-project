@@ -1,13 +1,12 @@
 import HelloType, { Dict, Enum, Tuple, List, Type, Rule, Self, IfExists } from 'hello-type'
 
-const TestType = new Type({
+const Index = new Type({
     variable: String,
 });
 
-
 export default {
-    namespace: 'test/test/test',
+    namespace: 'models/Types/Index',
     assert(data) {
-        TestType.assert(data);
+        Index.assert(data);
     },
 };

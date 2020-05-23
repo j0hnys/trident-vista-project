@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+/coverage
+/resources_backend/client_app/modules/presentation/tests/__snapshots__
 .env
 .env.backup
 .phpunit.result.cache

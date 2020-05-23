@@ -1,4 +1,4 @@
-import MainMenu from '../../navigation/main_menu/main_menu.js';
+import MainMenu from '../../constants/navigation/main_menu/main_menu.js';
 
 var state = {
     breadcrumbs: [],
@@ -10,18 +10,16 @@ var state = {
 export default {
     namespaced: true,
     state: state,
-    mutations: {    //must be synchronous!! ta "actions" einai workflows praktika!!
+    mutations: {
         set_breadcrumbs (state, data) {
             state.breadcrumbs = data;
         },
     },
     getters: {
         breadcrumbs: (state) => {
-            // console.log(data);
             return state.breadcrumbs;
         },
         navigation: (state) => (data) => {
-            // console.log(data);
             return state.navigation;
         }
     },
