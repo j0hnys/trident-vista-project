@@ -28,7 +28,7 @@
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^24.9.0",
         "vue-jest": "^3.0.5",
-        "axios": "^0.19",
+        "axios": "^0.21",
         "cross-env": "^7.0",
         "bootstrap": "^4.1.0",
         "laravel-mix": "^5.0.1",
